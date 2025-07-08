@@ -1,5 +1,8 @@
 [build]
-        publish = "public/"
+  functions = "netlify/functions"
 
-[functions]
-        node_bundler = "esbuild"
+[[redirects]]
+  from = "/chat/*"  # 假设你的 Gemini API 路径是以 /v1beta 开头
+  to = "/.netlify/functions/gemini-proxy"
+  status = 200
+  force = true
